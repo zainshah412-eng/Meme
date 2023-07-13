@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meme/utils/routes.dart';
 
 import '../widgets/onboarding_contents.dart';
 import '../widgets/size_config.dart';
@@ -103,62 +104,61 @@ class _OnBoardingState extends State<OnBoarding> {
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 60),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: List.generate(
-                              contents.length,
-                              (int index) => _buildDots(
-                                index: index,
-                              ),
-                            ),
-                          ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: List.generate(
+                          //     contents.length,
+                          //     (int index) => _buildDots(
+                          //       index: index,
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     );
                   },
                 ),
               ),
-              // Expanded(
-              //   flex: 1,
-              //   child: Column(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       Row(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         children: List.generate(
-              //           contents.length,
-              //           (int index) => _buildDots(
-              //             index: index,
-              //           ),
-              //         ),
-              //       ),
-              //       _currentPage + 1 == contents.length
-              //           ? Padding(
-              //               padding: const EdgeInsets.all(30),
-              //               child: ElevatedButton(
-              //                 onPressed: () {},
-              //                 child: const Text("START"),
-              //                 style: ElevatedButton.styleFrom(
-              //                   backgroundColor: Colors.yellow,
-              //                   shape: RoundedRectangleBorder(
-              //                     borderRadius: BorderRadius.circular(50),
-              //                   ),
-              //                   padding: (width <= 550)
-              //                       ? const EdgeInsets.symmetric(
-              //                           horizontal: 100, vertical: 20)
-              //                       : EdgeInsets.symmetric(
-              //                           horizontal: width * 0.2, vertical: 25),
-              //                   textStyle: TextStyle(
-              //                       fontSize: (width <= 550) ? 13 : 17),
-              //                 ),
-              //               ),
-              //             )
-              //           : Padding(
-              //               padding: const EdgeInsets.all(30),
-              //             )
-              //     ],
-              //   ),
-              // ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        contents.length,
+                        (int index) => _buildDots(
+                          index: index,
+                        ),
+                      ),
+                    ),
+                    _currentPage + 1 == contents.length
+                        ? Padding(
+                            padding: const EdgeInsets.all(30),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, MyRoutes.home);
+                              },
+                              child: const Text(
+                                "skip",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.yellow,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                textStyle: TextStyle(fontSize: 17),
+                              ),
+                            ),
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.all(30),
+                          )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
