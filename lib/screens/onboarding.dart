@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meme/utils/routes.dart';
-
 import '../widgets/onboarding_contents.dart';
 import '../widgets/size_config.dart';
 
@@ -138,7 +137,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, MyRoutes.home);
+                                Navigator.pushNamed(context, MyRoutes.otp);
                               },
                               child: const Text(
                                 "skip",
