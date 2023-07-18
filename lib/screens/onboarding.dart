@@ -57,6 +57,7 @@ class _OnBoardingState extends State<OnBoarding> {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 flex: 3,

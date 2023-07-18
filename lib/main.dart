@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meme/screens/congratulations.dart';
 import 'package:meme/screens/main.dart';
 import 'package:meme/screens/onboarding.dart';
 import 'package:meme/screens/otp.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.splashRoute: (context) => Splash(),
         MyRoutes.home: (context) => Main(),
         MyRoutes.otp: (context) => OTPAuth(),
+        MyRoutes.congratulations: (context) => Congratulations(),
       },
     );
   }
