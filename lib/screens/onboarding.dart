@@ -138,7 +138,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, MyRoutes.home);
+                                Navigator.pushNamed(context, MyRoutes.otp);
                               },
                               child: const Text(
                                 "skip",
